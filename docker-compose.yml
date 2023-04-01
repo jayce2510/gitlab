@@ -1,0 +1,26 @@
+version: '3.6'
+
+services:
+  web:
+    image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
+    restart: always
+    hostname: 'gitlab.yourdomain'
+    environment:
+      TZ: "Asia/Ho_Chi_Minh"
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://gitlab.yourdomain'
+        # Add any other gitlab.rb configuration here, each on its own line
+        letsencrypt['enable'] = false
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        registry_external_url 'https://registry.gitlab.yourdomain'
+    ports:
+      - '80:80'
+      - '443:443'
+      - '2222:22'
+    volumes:
+      - './data/config:/etc/gitlab'
+      - './data/logs:/var/log/gitlab'
+      - './data/data:/var/opt/gitlab'
+      - './ssl:/etc/gitlab/ssl'
+#    shm_size: '256m'
