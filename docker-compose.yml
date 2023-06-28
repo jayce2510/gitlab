@@ -65,5 +65,5 @@ services:
       - './data/config:/etc/gitlab'
       - './data/logs:/var/log/gitlab'
       - './data/data:/var/opt/gitlab'
-			#Stored the ssl files and edit to the same domain name
+      #Stored the ssl files and edit to the same domain name
       - './ssl:/etc/gitlab/ssl'
