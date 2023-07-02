@@ -9,16 +9,16 @@ services:
       TZ: "Asia/Ho_Chi_Minh"
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'https://gitlab.vn.fitlg.asia'
-        # Add any other gitlab.rb configuration here, each on its own line
+        #Add any other gitlab.rb configuration here, each on its own line
         letsencrypt['enable'] = false
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
         registry_external_url 'https://registry.vn.fitlg.asia'
 
-        # Reply by email
+        #Reply by email
         gitlab_rails['incoming_email_enabled'] = true
         gitlab_rails['incoming_email_address'] = "alviss2510+%{key}@gmail.com"
         gitlab_rails['incoming_email_email'] = "alviss2510@gmail.com"
-        gitlab_rails['incoming_email_password'] = "mkfybajivcbafajd"
+        gitlab_rails['incoming_email_password'] = "changeme"
         gitlab_rails['incoming_email_host'] = "imap.gmail.com"
         gitlab_rails['incoming_email_port'] = 993
         gitlab_rails['incoming_email_ssl'] = true
@@ -35,7 +35,7 @@ services:
         gitlab_rails['smtp_address'] = "smtp.gmail.com"
         gitlab_rails['smtp_port'] = 587
         gitlab_rails['smtp_user_name'] = "alviss2510@gmail.com"
-        gitlab_rails['smtp_password'] = "mkfybajivcbafajd"
+        gitlab_rails['smtp_password'] = "changeme"
         gitlab_rails['smtp_domain'] = "smtp.gmail.com"
         gitlab_rails['smtp_authentication'] = "login"
         gitlab_rails['smtp_enable_starttls_auto'] = true
@@ -53,7 +53,7 @@ services:
             'encryption' => 'simple_tls',
             'verify_certificates' => false,
             'bind_dn' => 'GitLabSRV',
-            'password' => 'it@Gitlab2023',
+            'password' => 'changeme',
             'base' => 'OU=VTN,DC=CAWOWX,DC=local',
            }
          }
