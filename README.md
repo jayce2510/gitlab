@@ -1,6 +1,6 @@
 # Importing cert files
 
-Copy your cery files to SSL folder and change the same name as your GitLab URL
+Copy your cert files to SSL folder and change the same name as your GitLab URL
 
 For example:
 
