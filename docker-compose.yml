@@ -4,20 +4,20 @@ services:
     image: 'gitlab/gitlab-ce:latest'
     container_name: gitlab
     restart: always
-    hostname: 'gitlab.vn.fitlg.asia'
+    hostname: 'your-hostname'
     environment:
       TZ: "Asia/Ho_Chi_Minh"
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'https://gitlab.vn.fitlg.asia'
+        external_url 'https://your-hostname'
         #Add any other gitlab.rb configuration here, each on its own line
         letsencrypt['enable'] = false
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
-        registry_external_url 'https://registry.vn.fitlg.asia'
+        registry_external_url 'https://your-registry-hostname'
 
         #Reply by email
         gitlab_rails['incoming_email_enabled'] = true
-        gitlab_rails['incoming_email_address'] = "alviss2510+%{key}@gmail.com"
-        gitlab_rails['incoming_email_email'] = "alviss2510@gmail.com"
+        gitlab_rails['incoming_email_address'] = "username+%{key}@gmail.com"
+        gitlab_rails['incoming_email_email'] = "username@gmail.com"
         gitlab_rails['incoming_email_password'] = "changeme"
         gitlab_rails['incoming_email_host'] = "imap.gmail.com"
         gitlab_rails['incoming_email_port'] = 993
@@ -34,7 +34,7 @@ services:
         gitlab_rails['smtp_enable'] = true
         gitlab_rails['smtp_address'] = "smtp.gmail.com"
         gitlab_rails['smtp_port'] = 587
-        gitlab_rails['smtp_user_name'] = "alviss2510@gmail.com"
+        gitlab_rails['smtp_user_name'] = "username@gmail.com"
         gitlab_rails['smtp_password'] = "changeme"
         gitlab_rails['smtp_domain'] = "smtp.gmail.com"
         gitlab_rails['smtp_authentication'] = "login"
